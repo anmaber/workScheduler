@@ -3,10 +3,12 @@
 
 struct EmployeeTest : public::testing::Test
 {
-    Employee employee{1};
+    Employee employee{1,"Anna","Nowak"};
 };
 
-TEST_F(EmployeeTest, whenIdIs1returns1)
+TEST_F(EmployeeTest, employeePersonalDataInitializesCorrectly)
 {
     ASSERT_EQ(employee.getId(),1);
+    ASSERT_EQ(employee.getFirstName(),"Anna");
+    ASSERT_EQ(employee.getLastName(),"Nowak");
 }
